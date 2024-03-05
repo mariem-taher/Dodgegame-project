@@ -7,7 +7,7 @@ pygame.init()
 screen_width = 800
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Simple Pygame Game")
+pygame.display.set_caption("DODGE GAME")
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
