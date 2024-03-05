@@ -46,6 +46,10 @@ def collision():
         if obstacle.colliderect(player):
             return True
     return False
+    
+running = True
+while running:
+    screen.fill(BLACK)
 
 
 pygame.display.flip()
