@@ -3,21 +3,21 @@ import random
 import sys
 
 pygame.init()
-
+//creating the screen 
 screen_width = 800
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("DODGE GAME")
-
+//setting colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-
+//creating player
 player_width = 50
 player_height = 50
 player_x = screen_width // 2 - player_width // 2
 player_y = screen_height - player_height - 10
 player_speed = 5
-
+//creating obstacle
 obstacle_width = 50
 obstacle_height = 50
 obstacle_speed = 5
