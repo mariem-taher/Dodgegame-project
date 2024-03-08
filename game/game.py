@@ -4,19 +4,19 @@ import sys
 
 pygame.init()
 
-//creating the screen 
+#creating the screen 
 
 screen_width = 800
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("DODGE GAME")
 
-//setting colors
+#setting colors
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-//creating player
+#creating player
 
 player_width = 50
 player_height = 50
@@ -24,7 +24,7 @@ player_x = screen_width // 2 - player_width // 2
 player_y = screen_height - player_height - 10
 player_speed = 5
 
-//creating obstacle
+#creating obstacle
 
 obstacle_width = 50
 obstacle_height = 50
@@ -78,7 +78,7 @@ while running:
     player = pygame.Rect(player_x, player_y, player_width, player_height)
     draw_player()
 
-    if check_collision():
+    if collision():
         print("Game Over!")
         running = False
 
