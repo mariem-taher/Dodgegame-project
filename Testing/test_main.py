@@ -1,6 +1,6 @@
 import pytest
 import pygame
-from dodgegame import create_obstacle, move_obstacles, check_collision
+from dodgegame import create_obstacle, move_obstacles, collision
 
 def test_create_obstacle():
     pygame.init()
