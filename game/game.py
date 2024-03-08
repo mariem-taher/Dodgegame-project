@@ -3,21 +3,29 @@ import random
 import sys
 
 pygame.init()
+
 //creating the screen 
+
 screen_width = 800
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("DODGE GAME")
+
 //setting colors
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
+
 //creating player
+
 player_width = 50
 player_height = 50
 player_x = screen_width // 2 - player_width // 2
 player_y = screen_height - player_height - 10
 player_speed = 5
+
 //creating obstacle
+
 obstacle_width = 50
 obstacle_height = 50
 obstacle_speed = 5
@@ -51,6 +59,28 @@ running = True
 while running:
     screen.fill(BLACK)
 
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and player_x > 0:
+        player_x -= player_speed
+    if keys[pygame.K_RIGHT] and player_x < screen_width - player_width:
+        player_x += player_speed
+
+    if random.randint(0, 100) < 3:
+        create_obstacle()
+
+    move_obstacles()
+    draw_obstacles()
+
+    player = pygame.Rect(player_x, player_y, player_width, player_height)
+    draw_player()
+
+    if check_collision():
+        print("Game Over!")
+        running = False
 
 pygame.display.flip()
 clock.tick(60)
