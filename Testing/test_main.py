@@ -1,6 +1,6 @@
 import pytest
 import pygame
-from dodgegame import create_obstacle, move_obstacles, collision
+from dodgegame import *
 #vérifie si la fonction crée un nouvel obstacle dans le jeu.
 def test_create_obstacle():
     pygame.init()
